@@ -1,0 +1,19 @@
+{
+  "name": "nicolay-kr-nodejs2021q4",
+  "version": "1.0.0",
+  "description": "Private repository for @nicolay-kr",
+  "main": "alphabet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/nicolay-kr-NODEJS2021Q4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/nicolay-kr-NODEJS2021Q4/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/nicolay-kr-NODEJS2021Q4#readme"
+}

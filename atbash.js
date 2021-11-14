@@ -9,13 +9,13 @@ exports.atbash = (text) => {
         
         if(alphabet.includes(char)){
             let pos = alphabet.indexOf(char) ;
-            pos = pos < 0?  alphabet.length - 1 - pos : pos;
+            pos = alphabet.length - 1 - pos;
             return alphabet[pos];
         }
 
         if(alphabetUpper.includes(char)){
             let pos = alphabetUpper.indexOf(char);
-            pos = pos < 0?  alphabetUpper.length - 1 - pos : pos;
+            pos = alphabetUpper.length - 1 - pos;
             return alphabetUpper[pos];
         }
         

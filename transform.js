@@ -3,24 +3,22 @@ const { caesarCipher } = require("./caesarCipher");
 const { atbash } = require("./atbash");
 const { rot8 } = require("./rot8");
 
-exports.transformStream = (cipher) => {
+exports.transformStream = (cipherCode) => {
     return new Transform({transform(chunk, _encoding, callback){
-        let cipherArr = cipher.split('-');
-        cipherArr.forEach(item => {
+        let cipher = chunk.toString('utf8');
+        let cipherCodeArr = cipherCode.split('-');
+        cipherCodeArr.forEach(item => {
             if(item.startsWith("C")){
-                this.push(caesarCipher(chunk.toString('utf8'),!!+item[1]));
+                cipher = caesarCipher(cipher,!!+item[1]);
             }
             if(item.startsWith("R")){
-                this.push(rot8(chunk.toString('utf8'),!!+item[1]));
+                cipher = (rot8(cipher,!!+item[1]));
             }
             if(item.startsWith("A")){
-                this.push(atbash(chunk.toString('utf8')));
+                cipher = (atbash(cipher));
             }
         });
-
-        
+        this.push(cipher);
         callback();
     }})
 }
-
-// C1-C1-R0-A

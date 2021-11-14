@@ -1,17 +1,24 @@
-const fs = require('fs');
 const { pipeline } = require('stream');
+const { inputStream } = require('./input');
+const { outputStream } = require('./output');
+const { transformStream } = require('./transform');
 
-const input = fs.createReadStream('input.txt', 'utf-8');
-const output = fs.createWriteStream('output.txt');
-
-pipeline(
-    input,
-    output,
-    err => {
-        if (err) {
-            // обрабатываем ошибки
-        }
+exports.streams = ( shift, action, input, output ) => {
+    if( !shift || !action ) {
+        console.error("Shift and action are required");
+        process.exit(9);
     }
-);
+    shift = action === "encode"? shift * 1 : shift * -1;
 
-module.exports = pipeline;
+    pipeline(
+        inputStream(input),
+        transformStream(shift),
+        outputStream(output),
+        err => {
+            if (err) {
+                console.error("Errore", err);
+                process.exit(9);
+            }
+        }
+    )
+}

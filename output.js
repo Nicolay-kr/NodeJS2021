@@ -9,5 +9,5 @@ exports.outputStream = file => {
             process.exit(9);
         }
     }
-    return process.stdin
+    return process.stdout
 }

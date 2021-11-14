@@ -10,9 +10,7 @@ exports.caesarCipher = (text,encode=true) => {
         
         if(alphabet.includes(char)){
             let pos = (alphabet.indexOf(char) + shift);
-            console.log(pos)
             pos = pos < 0? alphabet.length + pos : pos;
-            // console.log(pos)
             return alphabet[pos];
         }
 

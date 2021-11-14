@@ -2,20 +2,20 @@ const alphabet = require("./alphabet.js");
 
 const alphabetUpper = alphabet.map((char)=>char.toUpperCase());
 
-exports.caesarCipher = (text,encode=true) => {
+exports.atbash = (text) => {
     
     const inputTextArr = text.split('');
     const outputTextArr = inputTextArr.map((char) => {
         
         if(alphabet.includes(char)){
-            let pos = (alphabet.indexOf(char) + encode?1:-1) % alphabet.length ;
-            pos = pos < 0? alphabet.length + pos : pos;
+            let pos = alphabet.indexOf(char) ;
+            pos = pos < 0?  alphabet.length - 1 - pos : pos;
             return alphabet[pos];
         }
 
         if(alphabetUpper.includes(char)){
-            let pos = (alphabetUpper.indexOf(char) + encode?1:-1) % alphabetUpper.length;
-            pos = pos < 0? alphabetUpper.length + pos : pos;
+            let pos = alphabetUpper.indexOf(char);
+            pos = pos < 0?  alphabetUpper.length - 1 - pos : pos;
             return alphabetUpper[pos];
         }
         

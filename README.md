@@ -35,6 +35,12 @@ For example, config `"C1-C1-R0-A"` means "encode by Caesar cipher => encode by C
 
 5. Type examples bellow.
 
+**For run test: **
+
+1. npm i.
+
+2. npm run test:coverage
+
 
 
 

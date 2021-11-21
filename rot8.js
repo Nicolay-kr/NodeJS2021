@@ -2,7 +2,7 @@ const alphabet = require("./alphabet.js");
 
 const alphabetUpper = alphabet.map((char)=>char.toUpperCase());
 
-exports.rot8 = (text,encode) => {
+exports.rot8 = (text,encode=true) => {
     let shift = encode?+8:-8;
 
     const inputTextArr = text.split('');

@@ -2,9 +2,10 @@
   "name": "nicolay-kr-nodejs2021q4",
   "version": "1.0.0",
   "description": "Private repository for @nicolay-kr",
-  "main": "alphabet.js",
+  "main": "test/index.test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,13 @@
     "url": "https://github.com/rolling-scopes-school/nicolay-kr-NODEJS2021Q4/issues"
   },
   "homepage": "https://github.com/rolling-scopes-school/nicolay-kr-NODEJS2021Q4#readme",
-  "dependencies": {
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
     "jest": "^27.3.1"
+  },
+  "typeAcquisition": {
+    "include": [
+      "jest"
+    ]
   }
 }

@@ -5,8 +5,7 @@ exports.inputStream = file => {
         if(fs.existsSync(file)) {
             return fs.createReadStream(file)
         } else {
-            console.error("input file doesn't exist"); -
-            process.exit(9);
+            throw new Error(`Input file doesn't exist`);
         }
     }
     return process.stdin

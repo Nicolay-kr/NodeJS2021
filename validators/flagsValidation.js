@@ -1,4 +1,3 @@
-const { stdout, stderr, exit } = process;
 
 function flagsValidation(flags) {
     if( typeof flags === "string"){

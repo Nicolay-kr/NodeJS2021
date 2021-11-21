@@ -5,8 +5,7 @@ exports.outputStream = file => {
         if(fs.existsSync(file)) {
             return fs.createWriteStream(file, {flags:'a'})
         } else {
-            console.error("output file doesn't exist")
-            process.exit(9);
+           throw new Error(`Output file doesn't exist`);
         }
     }
     return process.stdout
